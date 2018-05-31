@@ -29,7 +29,7 @@ void ConfigINI::loadConfigFile()
     fstream fStream;
     string p = iniFileName;
 
-    fStream.open(p,ios::in);
+    fStream.open(p.c_str(),ios::in);//attention!!!!!!!!!!!!!
     if(!fStream){
         if(!autoCreate){
             log("load config, file [%s] not exist", iniFileName);
